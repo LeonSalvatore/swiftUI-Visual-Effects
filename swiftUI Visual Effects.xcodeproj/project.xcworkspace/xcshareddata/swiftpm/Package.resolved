@@ -1,0 +1,15 @@
+{
+  "originHash" : "98898a595e53841d2dd0a52beb43c9eb86ae98682d0f95902c1f9045d8f7885f",
+  "pins" : [
+    {
+      "identity" : "eazyswiftui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ziyon-fr/EazySwiftUI",
+      "state" : {
+        "revision" : "ef723e821c3c011c84fa4d8d9270df5b5ac4cb26",
+        "version" : "1.5.2"
+      }
+    }
+  ],
+  "version" : 3
+}

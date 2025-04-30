@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		359988EB2DC2531E0001FF0E /* EazySwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 359988EA2DC2531E0001FF0E /* EazySwiftUI */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		359987192DC24AE10001FF0E /* swiftUI Visual Effects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swiftUI Visual Effects.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				359988EB2DC2531E0001FF0E /* EazySwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +70,7 @@
 			);
 			name = "swiftUI Visual Effects";
 			packageProductDependencies = (
+				359988EA2DC2531E0001FF0E /* EazySwiftUI */,
 			);
 			productName = "swiftUI Visual Effects";
 			productReference = 359987192DC24AE10001FF0E /* swiftUI Visual Effects.app */;
@@ -94,6 +100,9 @@
 			);
 			mainGroup = 359987102DC24AE10001FF0E;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				359988E92DC2531E0001FF0E /* XCRemoteSwiftPackageReference "EazySwiftUI" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 3599871A2DC24AE10001FF0E /* Products */;
 			projectDirPath = "";
@@ -253,6 +262,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "swiftUI VE";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -292,6 +303,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "swiftUI VE";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -341,6 +354,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		359988E92DC2531E0001FF0E /* XCRemoteSwiftPackageReference "EazySwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ziyon-fr/EazySwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		359988EA2DC2531E0001FF0E /* EazySwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 359988E92DC2531E0001FF0E /* XCRemoteSwiftPackageReference "EazySwiftUI" */;
+			productName = EazySwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 359987112DC24AE10001FF0E /* Project object */;
 }
