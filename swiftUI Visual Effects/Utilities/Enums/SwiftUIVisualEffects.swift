@@ -7,68 +7,79 @@
 
 import SwiftUI
 
-enum SwiftUIVisualEffects: String,Identifiable, CaseIterable, Hashable {
+enum SwiftUIVisualEffects: String, NavigationProtocol {
+    
     case textTransition
-    case stripes
-    case meshGradient
+    case gradiants
     case visualEffects
     case scrollTransition
-    
+    case metal
     
     var id: Self { self }
     
     var title: String {
         switch self {
         case .textTransition: return "Text Transition"
-        case .stripes: return "Stripes"
         case .visualEffects: return "Visual Effect "
         case .scrollTransition: return "Scroll Transition"
-        case .meshGradient: return "Mesh Gradient"
+        case .gradiants: return "Mesh Gradient"
+        case .metal: return "Metal"
             
         }
     }
     
-    @ViewBuilder
-    func destination() -> some View {
-        switch self {
-        case .textTransition:
-            TextTransitionView()
-            
-        case .stripes:
-            Stripes()
-        case .visualEffects:
-            VisualEffectsView()
-        case .scrollTransition:
-            ScrollTransitionView()
-        case .meshGradient:
-            MeshGradientView()
+    var destination: some View {
+        Group {
+            switch self {
+            case .visualEffects:
+                GlobalView(title: title, section: VisualEffects.self)
+            case .textTransition:
+                GlobalView(title: title, section: TextTransitions.self)
+            case .gradiants:
+                GlobalView(title: title, section: Gradiants.self)
+            case .scrollTransition:
+                GlobalView(title: title, section: ScrollTransition.self)
+            case .metal:
+                GlobalView(title: title, section: MetalShaders.self)
+            }
         }
     }
+    
     
     var snapshot: UIImage? {
-        return destination().cachedSnapshot(id: self.rawValue)
+        return destination.cachedSnapshot(id: self.rawValue)
     }
 }
 
-enum ScrollTransition: String, Identifiable, CaseIterable, Hashable {
+enum ScrollTransition: NavigationProtocol {
     
     var id: Self { self }
+    
     case parallax
     case rotation
     case paging
     
-    @ViewBuilder
-    func destination()-> some View {
+    var title: String {
         switch self {
-        case .parallax: ParallaxEffect()
-        case .rotation: ScrollRotationView()
-        case .paging: ScrollPagingView()
+        case .parallax: "Parallax"
+        case .rotation: "Rotation"
+        case .paging: "Paging"
+        }
+    }
+    
+    var destination: some View {
+        Group {
+            switch self {
+            case .parallax: ParallaxEffect()
+            case .rotation: ScrollRotationView()
+            case .paging: ScrollPagingView()
+            }
         }
     }
     
 }
-
-enum VisualEffects: String, Identifiable, CaseIterable, Hashable {
+enum VisualEffects: NavigationProtocol {
+    
     var id: Self { self }
     case hue
     var title: String {
@@ -77,11 +88,73 @@ enum VisualEffects: String, Identifiable, CaseIterable, Hashable {
         }
     }
     
-    @ViewBuilder
-    func destination() -> some View {
+    var destination: some View {
         switch self {
         case .hue: HueVisualEffectView()
         }
     }
     
 }
+enum MetalShaders: NavigationProtocol {
+    
+    var id: Self { self }
+    
+    case ripple
+    case stripes
+    
+    var title: String {
+        switch self {
+        case .ripple: "Ripple Effect"
+        case .stripes: "Stripes"
+            
+        }
+    }
+    
+    var destination: some View {
+        
+        switch self {
+        case .ripple: AnyView(RippleView())
+        case .stripes: AnyView(Stripes())
+        }
+    }
+}
+enum TextTransitions: NavigationProtocol {
+    
+    var id: Self { self }
+    
+    case fade
+    case scale
+    case opacity
+    case scaleAndFade
+    
+    var destination: some View {
+        TextTransitionView()
+    }
+    var title: String {
+        switch self {
+        case .fade: "Fade"
+        case .scale: "Scale"
+        case .opacity: "Opacity"
+        case .scaleAndFade: "Scale and Fade"
+        }
+    }
+}
+enum Gradiants: NavigationProtocol {
+    var id: Self { self }
+    
+    case linear
+    case radial
+    case mesh
+    
+    var destination: some View {
+        MeshGradientView()
+    }
+    var title: String {
+        switch self {
+        case .linear: "Linear"
+        case .radial: "Radial"
+        case .mesh: "Mesh Gradiant"
+        }
+    }
+}
+

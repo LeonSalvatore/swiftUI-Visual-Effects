@@ -10,13 +10,17 @@ import SwiftUI
 struct MeshGradientView: View {
     
     @State private var presentConfigurationSheet: Bool = false
-    @State private var configuration = MeshGradientConfiguration.coordinate
+    @State private var configuration = MeshGradientConfiguration.default
     
     var body: some View {
         VStack(alignment: .leading, spacing: .zero) {
         
+            Toggle("Hide Configuration", isOn: $presentConfigurationSheet.animation())
+                .padding(.horizontal)
+            
             MeshGradientConfigurationView(configuration: $configuration)
                 .verticalAlignment(alignment: .bottom)
+                .hide(presentConfigurationSheet)
             
         }
         .verticalAlignment(alignment: .topLeading)

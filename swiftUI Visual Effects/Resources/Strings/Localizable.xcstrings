@@ -4,6 +4,12 @@
     "" : {
 
     },
+    "Amplitude" : {
+
+    },
+    "Animate" : {
+
+    },
     "Color" : {
 
     },
@@ -16,7 +22,19 @@
     "Config Size" : {
 
     },
+    "Configurations" : {
+
+    },
+    "Decay" : {
+
+    },
     "Edit Point %lld" : {
+
+    },
+    "Frequency" : {
+
+    },
+    "Hide Configuration" : {
 
     },
     "Hue Visual Effect" : {
@@ -40,16 +58,22 @@
     "Remote Images" : {
 
     },
+    "Reset" : {
+
+    },
+    "Ripple View" : {
+
+    },
     "Scale Effect" : {
 
     },
     "Scroll Rotation View" : {
 
     },
-    "Scroll Transitions" : {
+    "Shape Style" : {
 
     },
-    "Shape Style" : {
+    "Show Configuration" : {
 
     },
     "Stripes" : {
@@ -58,10 +82,16 @@
     "Text Transition" : {
 
     },
+    "Time" : {
+
+    },
     "Vissual Effects" : {
 
     },
     "Visual Effects" : {
+
+    },
+    "Welcome to: %@" : {
 
     },
     "X: %.2f" : {

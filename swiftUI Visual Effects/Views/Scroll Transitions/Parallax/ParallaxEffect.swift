@@ -17,7 +17,7 @@ struct ParallaxEffect: View {
         
         VStack(alignment: .leading) {
             
-            Toggle("Remote Images", isOn: $observer.isRemote)
+            Toggle("Remote Images", isOn: $observer.isRemote.animation())
                 .padding(.horizontal)
             
             if observer.isLoading {

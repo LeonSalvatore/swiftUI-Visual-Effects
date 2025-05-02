@@ -37,7 +37,7 @@ struct HueVisualEffectView: View {
             .pickerStyle(.segmented)
             .padding(.horizontal)
             
-            Toggle("Scale Effect", isOn: $isOn)
+            Toggle("Scale Effect", isOn: $isOn.animation())
                 .padding(.horizontal)
             
             Group {
@@ -75,7 +75,6 @@ struct HueVisualEffectView: View {
                         .shadow(radius: 5)
                 }
                 .padding(.horizontal)
-                .verticalAlignment(alignment: .bottom)
             
         }
     }

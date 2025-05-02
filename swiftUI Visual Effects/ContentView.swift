@@ -7,40 +7,14 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    
-    let views = SwiftUIVisualEffects.allCases
-    
-
-    
-    @State private var snapshot: UIImage? = nil
-    
+struct ContentView: View {    
     var body: some View {
         NavigationStack {
-            VStack(alignment:.leading) {
-                
-                List {
-                    ForEach(views) { view in
-                        NavigationLink(value: view) {
-                            Text(view.title)
-                                .font(.headline)
-                           
-                        }
-                       
-                    }
-                    .navigationBarTitle("Vissual Effects")
-                    
-                    
-                }
-                .listStyle(.inset)
-                
-            }
-            .padding(.horizontal)
-            .verticalAlignment(alignment: .topLeading)
-            .navigationDestination(for: SwiftUIVisualEffects.self) { $0.destination() }
+            GlobalView(
+                title: "Vissual Effects",
+                section: SwiftUIVisualEffects.self)
         }
     }
-    
 }
 
 // Step 1: Create a cache wrapper
