@@ -23,6 +23,7 @@ struct ParallaxEffect: View {
             if observer.isLoading {
                 ProgressView()
                     .verticalAlignment(alignment: .center)
+                    .horizontalAlignment(alignment: .center)
             } else {
                 if let errorMessage = observer.errorMessage {
                     Text(errorMessage)

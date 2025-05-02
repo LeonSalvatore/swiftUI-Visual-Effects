@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ziyon-fr/EazySwiftUI",
       "state" : {
-        "revision" : "ef723e821c3c011c84fa4d8d9270df5b5ac4cb26",
-        "version" : "1.5.2"
+        "revision" : "7cb2f558cac0868df5b1fa5a5ce47d3e879e296f",
+        "version" : "1.5.3"
       }
     }
   ],

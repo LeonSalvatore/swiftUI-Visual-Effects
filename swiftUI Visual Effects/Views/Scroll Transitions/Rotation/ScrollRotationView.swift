@@ -14,11 +14,12 @@ struct ScrollRotationView: View {
     var body: some View {
         VStack {
             ScrollView(.horizontal) {
-                LazyHStack(spacing: 12) {
+                LazyHStack {
                     ForEach(samples) { sample in
                         ScrollTransitionalView(sample, axis: .horizontal) { content, phase in
                             content
-                                .rotationEffect(.degrees(phase.value * 1.5))
+                                .rotationEffect(.degrees(phase.value * 2.5))
+                                .offset(y: phase.isIdentity ? 0 : 8)
                         }
                     }
                 }

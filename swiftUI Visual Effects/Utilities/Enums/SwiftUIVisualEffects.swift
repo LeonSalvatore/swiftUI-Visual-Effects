@@ -13,9 +13,9 @@ enum SwiftUIVisualEffects: String,Identifiable, CaseIterable, Hashable {
     case meshGradient
     case visualEffects
     case scrollTransition
-        
     
-    var id: String { self.rawValue }
+    
+    var id: Self { self }
     
     var title: String {
         switch self {
@@ -33,15 +33,20 @@ enum SwiftUIVisualEffects: String,Identifiable, CaseIterable, Hashable {
         switch self {
         case .textTransition:
             TextTransitionView()
+            
         case .stripes:
             Stripes()
         case .visualEffects:
-        VisualEffectsView()
+            VisualEffectsView()
         case .scrollTransition:
             ScrollTransitionView()
         case .meshGradient:
             MeshGradientView()
         }
+    }
+    
+    var snapshot: UIImage? {
+        return destination().cachedSnapshot(id: self.rawValue)
     }
 }
 
@@ -56,7 +61,7 @@ enum ScrollTransition: String, Identifiable, CaseIterable, Hashable {
     func destination()-> some View {
         switch self {
         case .parallax: ParallaxEffect()
-            case .rotation: ScrollRotationView()
+        case .rotation: ScrollRotationView()
         case .paging: ScrollPagingView()
         }
     }
@@ -65,7 +70,18 @@ enum ScrollTransition: String, Identifiable, CaseIterable, Hashable {
 
 enum VisualEffects: String, Identifiable, CaseIterable, Hashable {
     var id: Self { self }
-    case ugh
-    var title: String { rawValue.capitalized }
+    case hue
+    var title: String {
+        switch self {
+        case .hue: "Hue Visual Effect"
+        }
+    }
+    
+    @ViewBuilder
+    func destination() -> some View {
+        switch self {
+        case .hue: HueVisualEffectView()
+        }
+    }
     
 }

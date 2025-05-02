@@ -49,5 +49,7 @@ struct ScrollPagingView: View {
 }
 
 #Preview {
-    ScrollPagingView()
+    NavigationStack {
+        ScrollPagingView()
+    }
 }

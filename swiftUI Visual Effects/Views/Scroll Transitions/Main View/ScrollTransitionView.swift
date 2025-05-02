@@ -11,18 +11,20 @@ struct ScrollTransitionView: View {
     
     
     var body: some View {
+        
         VStack(alignment: .leading) {
+            
             List {
                 ForEach(ScrollTransition.allCases, content: Content)
             }
+            
         }
         .verticalAlignment(alignment: .topLeading)
         .navigationTitle("Scroll Transitions")
-        .navigationDestination(for: ScrollTransition.self) {
-            $0.destination()
-        }
+        .navigationDestination(for: ScrollTransition.self, destination:( {$0.destination()}))
     }
     
+    @ViewBuilder
     private func Content(_ transition: ScrollTransition)-> some View {
         NavigationLink(transition.rawValue.capitalized, value: transition)
     }

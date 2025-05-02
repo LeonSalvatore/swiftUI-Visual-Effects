@@ -40,7 +40,7 @@ extension ParralaxObserver {
                 // Add all download tasks
                 for photo in Photo.samples {
                     
-                    group.addTask {
+                    group.addTask(priority: .background) {
                         try await self.apiService.fetchImage(from: photo.link)
                     }
                 }
@@ -48,8 +48,9 @@ extension ParralaxObserver {
                 // Collect results, ignoring failures
                 while let result = await group.nextResult() {
                     if case .success(let image) = result {
-                        
-                        self.images.append(.init(isRemote: isRemote, image: image))
+                        withAnimation {
+                            self.images.append(.init(isRemote: isRemote, image: image))
+                        }
                         
                         isLoading = false
                         errorMessage = nil

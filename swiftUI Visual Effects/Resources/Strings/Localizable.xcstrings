@@ -1,0 +1,75 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+
+    },
+    "Color" : {
+
+    },
+    "Color Opacity for P%lld" : {
+
+    },
+    "Colors" : {
+
+    },
+    "Config Size" : {
+
+    },
+    "Edit Point %lld" : {
+
+    },
+    "Hue Visual Effect" : {
+
+    },
+    "Mesh Gradient" : {
+
+    },
+    "Opacity: %.2f" : {
+
+    },
+    "P%lld" : {
+
+    },
+    "Parallax Effect" : {
+
+    },
+    "Point" : {
+
+    },
+    "Remote Images" : {
+
+    },
+    "Scale Effect" : {
+
+    },
+    "Scroll Rotation View" : {
+
+    },
+    "Scroll Transitions" : {
+
+    },
+    "Shape Style" : {
+
+    },
+    "Stripes" : {
+
+    },
+    "Text Transition" : {
+
+    },
+    "Vissual Effects" : {
+
+    },
+    "Visual Effects" : {
+
+    },
+    "X: %.2f" : {
+
+    },
+    "Y: %.2f" : {
+
+    }
+  },
+  "version" : "1.0"
+}
