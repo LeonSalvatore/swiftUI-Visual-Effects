@@ -30,6 +30,7 @@ struct GlobalView<T: NavigationProtocol>: View where T: CaseIterable {
         }
         .navigationDestination(for: T.self, destination: \.destination)
         .navigationTitle(title)
+        
     }
 }
 

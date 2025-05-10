@@ -22,8 +22,8 @@ enum SwiftUIVisualEffects: String, NavigationProtocol {
         case .textTransition: return "Text Transition"
         case .visualEffects: return "Visual Effect "
         case .scrollTransition: return "Scroll Transition"
-        case .gradiants: return "Mesh Gradient"
-        case .metal: return "Metal"
+        case .gradiants: return "Gradients"
+        case .metal: return "Metal Shaders"
             
         }
     }
@@ -122,20 +122,25 @@ enum TextTransitions: NavigationProtocol {
     
     var id: Self { self }
     
-    case fade
-    case scale
-    case opacity
-    case scaleAndFade
+    case textAttribute
+    case highlight
     
     var destination: some View {
-        TextTransitionView()
+        Group {
+            switch self {
+            case .textAttribute: TextTransitionView()
+            case .highlight: TextHighlightView()
+            }
+        }
+        
     }
     var title: String {
         switch self {
-        case .fade: "Fade"
-        case .scale: "Scale"
-        case .opacity: "Opacity"
-        case .scaleAndFade: "Scale and Fade"
+            
+        case .textAttribute: return "Text Attribute"
+            
+        case .highlight: return "Highlight"
+            
         }
     }
 }
@@ -147,7 +152,17 @@ enum Gradiants: NavigationProtocol {
     case mesh
     
     var destination: some View {
-        MeshGradientView()
+        Group {
+            switch self {
+            case .linear: EmptyView()
+                
+            case .radial: EmptyView()
+                
+            case .mesh:
+                MeshGradientView()
+            }
+        }
+        
     }
     var title: String {
         switch self {

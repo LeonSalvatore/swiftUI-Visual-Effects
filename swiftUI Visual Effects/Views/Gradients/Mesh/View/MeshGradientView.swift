@@ -115,11 +115,7 @@ struct MeshGradientConfigurationView: View {
                     Slider(value: $configuration.colorOpacities[configuration.selectedPointIndex], in: 0...1)
                     Text("Opacity: \(configuration.colorOpacities[configuration.selectedPointIndex], specifier: "%.2f")")
                 }
-                .foregroundColor(.secondary)
-                .padding()
-                .font(.caption)
-                .background(.background)
-                .clipShape(.rect(cornerRadius: 10))
+                .colorPickerStyle()
             }
             .foregroundColor(.white)
             

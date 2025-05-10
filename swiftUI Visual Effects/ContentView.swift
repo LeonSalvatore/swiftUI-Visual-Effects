@@ -13,6 +13,7 @@ struct ContentView: View {
             GlobalView(
                 title: "Vissual Effects",
                 section: SwiftUIVisualEffects.self)
+            
         }
     }
 }
